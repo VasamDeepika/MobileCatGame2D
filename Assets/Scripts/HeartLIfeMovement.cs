@@ -4,22 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class EnemyMovement : MonoBehaviour
+public class HeartLIfeMovement : MonoBehaviour
 {
     Rigidbody2D enemyRb;
     public float speed;
     public int score = 50;
     public Text ScoreText;
     ScoreManager scoreManager;
-
-    public AudioClip playerClip;
-    AudioSource playerAudio;
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
         scoreManager = FindObjectOfType<ScoreManager>();
-        playerAudio = GameObject.Find("AudioManager").GetComponent<AudioSource>();
 
     }
 
@@ -32,15 +28,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            SceneManager.LoadScene("EndScene");
-        }
-        else if(collision.gameObject.tag == "Ground")
-        {
-            scoreManager.IncrementScore();
-            playerAudio.clip = playerClip;
-            playerAudio.Play();
-            //print("ground");
+            scoreManager.IncrementScore1();
         }
     }
 }

@@ -47,7 +47,7 @@ public class EnemySpawn : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time>2.0f)
+        if (time>2.0f && player!=null)
         {
             timeSinceLastSpawned += Time.deltaTime;
 
@@ -72,10 +72,7 @@ public class EnemySpawn : MonoBehaviour
         }
 
     }
-    public void stopSpawn()
-    {
-        CancelInvoke();
-    }
+
 }
 
 

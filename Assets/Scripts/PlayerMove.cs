@@ -15,9 +15,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float move = Input.GetAxis("horizontal") * speed;
-        //move *= Time.deltaTime;
-        //transform.Translate(move, 0, 0);
+        float move = Input.GetAxis("Horizontal") * speed;
+        move *= Time.deltaTime;
+        transform.Translate(move, 0, 0);
         if(Input.GetKeyDown("space"))
         {
             Instantiate(bullet, transform.position, Quaternion.identity);

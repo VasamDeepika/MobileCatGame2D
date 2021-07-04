@@ -7,20 +7,14 @@ public class SceneController : MonoBehaviour
 {
     //public Timer time;
 
-
-
-    public void StartGame()
+    void Start()
     {
-        SceneManager.LoadScene("GameScene");
+        Invoke("GoToGameScene", 2.0f);
     }
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
-    public void Menu()
+    void GoToGameScene()
     {
         SceneManager.LoadScene("StartScene");
     }
+    
 }
 

@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletMovement : MonoBehaviour
+public class MusicManager : MonoBehaviour
 {
-    public Vector3 velocity;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        transform.Translate(velocity);
+
     }
 }

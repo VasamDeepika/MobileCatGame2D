@@ -12,6 +12,10 @@ public class ScoreManager : MonoBehaviour
     {
         score++;
         ScoreText.text = "Score: " + score;
-        print(score);
+    }
+    public void IncrementScore1()
+    {
+        score+=5;
+        ScoreText.text = "Score: " + score;
     }
 }
